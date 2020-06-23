@@ -7,6 +7,9 @@ const { CLIENT_ORIGIN } = require('./config')
 
 const app = express()
 
+
+console.log('process.env.API_KEY', process.env.API_KEY, `${process.env.API_KEY}` )
+
 cloudinary.config({
     cloud_name: `${process.env.CLOUD_NAME}`,
     api_key: `${process.env.API_KEY}`,
@@ -27,6 +30,9 @@ app.post('/image-upload', (req,res) => {
     Promise
         .all(promises)
         .then(results => res.json(results))
+        .catch(err => {
+            res.json(err.message)
+        })
 })
 
 app.listen(process.env.PORT || 8080, () => console.log('okk'))
