@@ -3,7 +3,7 @@ import Spinner from './Spinner';
 import Images from './Images';
 import Buttons from './Buttons';
 import { API_URL } from './config'
-import './App.css'
+
 
 export default class App extends React.Component {
   state = {
@@ -12,6 +12,7 @@ export default class App extends React.Component {
   }
 
   onChange = e => {
+    console.log('e.target.files', e.target.files)
     const files = Array.from(e.target.files)
     this.setState({uploading: true})
 
