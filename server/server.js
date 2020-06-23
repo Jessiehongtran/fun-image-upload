@@ -21,6 +21,7 @@ app.use(formData.parse())
 
 app.post('/image-upload', (req,res) => {
     const values = Object.values(req.files)
+    console.log(values)
     const promises = values.map(image => cloudinary.uploader.upload(image.path))
 
     Promise
