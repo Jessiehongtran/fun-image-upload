@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const express = require('express');
 const cloudinary = require('cloudinary');
 const formData = require('express-form-data');
@@ -7,13 +7,16 @@ const { CLIENT_ORIGIN } = require('./config')
 
 const app = express()
 
+require('dotenv').config();
 
-console.log('process.env.API_KEY', process.env.API_KEY, `${process.env.API_KEY}` )
+const cloud_name = `${process.env.CLOUD_NAME}`
+const api_key = `${process.env.API_KEY}`
+const api_secret = `${process.env.API_SECRET}`
 
 cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.CLOUD_KEY,
-    api_secret: process.env.CLOUD_SECRET
+    cloud_name: cloud_name,
+    api_key: api_key,
+    api_secret: api_secret
 })
 
 app.use(cors({
