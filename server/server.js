@@ -19,12 +19,13 @@ cloudinary.config({
     api_secret: api_secret
 })
 
-app.use(cors(
-    {
-    origin: 'https://infoapp.htran2.vercel.app/'
-    // origin: CLIENT_ORIGIN
-    }
-))
+// app.use(cors(
+//     {
+//         origin: CLIENT_ORIGIN
+//     }
+// ))
+
+app.use(cors())
 
 app.use(formData.parse())
 
