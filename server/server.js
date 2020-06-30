@@ -19,9 +19,11 @@ cloudinary.config({
     api_secret: api_secret
 })
 
-app.use(cors({
-    origin: CLIENT_ORIGIN
-}))
+app.use(cors(
+    // {
+    // origin: CLIENT_ORIGIN
+    // }
+))
 
 app.use(formData.parse())
 
