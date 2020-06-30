@@ -21,7 +21,7 @@ cloudinary.config({
 
 app.use(cors(
     {
-    origin: '*'
+    origin: 'https://infoapp.htran2.vercel.app/'
     // origin: CLIENT_ORIGIN
     }
 ))
