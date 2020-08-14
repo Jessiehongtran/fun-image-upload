@@ -36,6 +36,8 @@ app.use(function(req, res, next) {
 app.use(formData.parse())
 
 app.post('/image-upload', (req,res) => {
+    console.log('req', red)
+    console.log('req.files',req.files)
     const values = Object.values(req.files)
     console.log(values)
     const promises = values.map(image => cloudinary.uploader.upload(image.path))
